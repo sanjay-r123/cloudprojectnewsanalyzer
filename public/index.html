@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Sentiment Analyzer - IBM Watson NLU</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <i class="fas fa-newspaper header-icon"></i>
+                <h1>News Sentiment Analyzer</h1>
+                <p class="subtitle">Powered by IBM Watson Natural Language Understanding</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="input-section">
+                <h2><i class="fas fa-edit"></i> Analyze News Article</h2>
+                <div class="input-container">
+                    <textarea 
+                        id="newsText" 
+                        placeholder="Paste your news article content here for sentiment analysis..."
+                        rows="8"
+                    ></textarea>
+                    <div class="input-actions">
+                        <button id="analyzeBtn" class="analyze-btn">
+                            <i class="fas fa-chart-line"></i>
+                            Analyze Sentiment
+                        </button>
+                        <button id="clearBtn" class="clear-btn">
+                            <i class="fas fa-eraser"></i>
+                            Clear
+                        </button>
+                    </div>
+                    <div class="character-count">
+                        <span id="charCount">0</span> characters
+                    </div>
+                </div>
+            </div>
+
+            <div id="loadingSection" class="loading-section" style="display: none;">
+                <div class="loading-spinner">
+                    <i class="fas fa-sync-alt fa-spin"></i>
+                </div>
+                <p>Analyzing with IBM Watson NLU...</p>
+            </div>
+
+            <div id="resultsSection" class="results-section" style="display: none;">
+                <h2><i class="fas fa-chart-bar"></i> Analysis Results</h2>
+                
+                <div class="results-grid">
+                    <div class="result-card sentiment-card">
+                        <h3><i class="fas fa-smile"></i> Overall Sentiment</h3>
+                        <div id="sentimentResult" class="sentiment-result">
+                            <div class="sentiment-label"></div>
+                            <div class="sentiment-score"></div>
+                            <div class="sentiment-bar">
+                                <div class="sentiment-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-card emotions-card">
+                        <h3><i class="fas fa-heart"></i> Emotional Analysis</h3>
+                        <div id="emotionsResult" class="emotions-result"></div>
+                    </div>
+
+                    <div class="result-card keywords-card">
+                        <h3><i class="fas fa-key"></i> Key Topics</h3>
+                        <div id="keywordsResult" class="keywords-result"></div>
+                    </div>
+
+                    <div class="result-card entities-card">
+                        <h3><i class="fas fa-tags"></i> Important Entities</h3>
+                        <div id="entitiesResult" class="entities-result"></div>
+                    </div>
+                </div>
+
+                <div class="analysis-summary">
+                    <div class="summary-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Word Count: <strong id="wordCount">0</strong></span>
+                    </div>
+                    <div class="summary-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Analyzed: <strong id="analysisTime">--</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="errorSection" class="error-section" style="display: none;">
+                <div class="error-content">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Analysis Error</h3>
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 News Sentiment Analyzer | Developed by Sanjay.R (22BCE10470) | VIT Bhopal</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
