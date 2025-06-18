@@ -10,7 +10,7 @@ A web-based sentiment analysis tool powered by IBM Watson Natural Language Under
 - Responsive design
 
 ## Live Demo
-🚀 [View Live Application](https://cloudcourseassignment2.onrender.com/)
+🚀 [View Live Application](https://cloudprojectnewsanalyzer.onrender.com/)
 
 ## Setup Instructions
 
